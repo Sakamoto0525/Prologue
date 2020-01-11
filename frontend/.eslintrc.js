@@ -6,9 +6,10 @@ module.exports = {
     "jest/globals": true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser'
   },
   extends: [
+    '@nuxtjs/eslint-config-typescript',
     'eslint:recommended',
     'plugin:prettier/recommended',
     'plugin:vue/recommended',
