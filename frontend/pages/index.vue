@@ -3,10 +3,10 @@
     <div>
       <logo />
       <h1 class="title">
-        Prologue
+        {{ title }}
       </h1>
       <h2 class="subtitle">
-        My perfect Nuxt.js project
+        {{ subtitle }}
       </h2>
       <div class="links">
         <a
@@ -24,14 +24,26 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
 
-export default {
+interface Data {
+  title: string
+  subtitle: string
+}
+
+export default Vue.extend({
   components: {
     Logo
+  },
+  data(): Data {
+    return {
+      title: 'Prologue',
+      subtitle: 'My perfect Nuxt.js project'
+    }
   }
-}
+})
 </script>
 
 <style>
