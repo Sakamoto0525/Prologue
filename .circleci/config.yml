@@ -43,6 +43,22 @@ jobs:
           paths:
             - ./vendor
 
+      - run:
+          name: Migrate
+          command: cd src && php artisan migrate --force
+
+      - run:
+          name: PHPUnit
+          command: cd src && php ./vendor/bin/phpunit
+
+          - run:
+          name: php_codesniffer
+          command: cd src && php ./vendor/bin/phpcs --standard=phpcs.xml ./
+
+      - run:
+          name: php-cs-fixer
+          command: cd src && php ./vendor/bin/php-cs-fixer fix -v --dry-run
+
       - restore_cache:
           keys:
             - node-v1-{{ checksum "frontend/package.json" }}
@@ -53,14 +69,10 @@ jobs:
           command: cd frontend && npm install
 
       - save_cache:
-          key: node-v1-{{ checksum "frontend/package.json" }}
+          key: node-v1-{{ checksum "frontend/package-lock.json" }}
           paths:
             - node_modules
 
       - run:
-          name: Migrate
-          command: cd src && php artisan migrate --force
-
-      - run:
-          name: PHPUnit
-          command: cd src && php ./vendor/bin/phpunit
+          name: eslint
+          command: cd frontend && npm run lint
