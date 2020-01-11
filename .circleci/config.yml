@@ -7,12 +7,12 @@ jobs:
       - image: circleci/mysql:8.0
         command: [--default-authentication-plugin=mysql_native_password]
 
-      environment:
-        - APP_DEBUG: true
-        - APP_ENV: testing
-        - APP_KEY: base64:y6w3PI9Y8O2G67lj0tiji9lGcysImESKJXxtyIZ81Bw=
-        - DB_CONNECTION: circle_test
-        - MYSQL_ALLOW_EMPTY_PASSWORD: true
+    environment:
+      - APP_DEBUG: true
+      - APP_ENV: testing
+      - APP_KEY: base64:cNXu2NqWHiIzuxqg6vIvefXTOdxtvWKqYFXKp0v4KKA=
+      - DB_CONNECTION: circle_test
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     steps:
       - checkout
