@@ -1,5 +1,17 @@
 import pkg from './package'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
+function axiosHost() {
+  if (!isProduction) {
+    return 'localhost'
+  }
+  // if (本番環境の環境変数) {
+  //   return ``
+  // }
+  return process.env.SERVER_HOST
+}
+
 module.exports = {
   mode: 'spa',
 
@@ -46,6 +58,10 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    host: axiosHost(),
+    port: isProduction ? 443 : 8000,
+    prefix: '/api',
+    https: isProduction
   },
 
   /*
