@@ -47,12 +47,35 @@ $ docker-compose restart app
 
 ## テスト
 
+### phpunit
+
+```bash
+$ docker exec app vendor/bin/phpunit
+```
+
 ### php_cs_fixer
 
 ```bash
 $ docker exec app composer fixer
-# また`-fix`をつけると自動整形
+# `-fix`をつけると自動整形
 $ docker exec app composer fixer-fix
+```
+
+### php_sniffer
+
+```bash
+$ docker exec app composer sniffer
+# `-fix`をつけると自動整形
+$ docker exec app composer sniffer-fix
+```
+
+### eslint
+
+```bash
+# frontendディレクトリ配下で実行
+$ npm run lint
+# `-fix`をつけると自動整形
+$ npm run lint --fix
 ```
 
 ## MySQL 接続
