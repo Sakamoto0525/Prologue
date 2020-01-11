@@ -9,8 +9,8 @@ class Cors
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -18,6 +18,7 @@ class Cors
         return $next($request)
             ->header('Access-Control-Allow-Origin', env('SERVER_HOST', '*'))
             ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-            ->header('Access-Control-Allow-Headers', 'Content-Type');
+            ->header('Access-Control-Allow-Headers', 'Content-Type')
+        ;
     }
 }
