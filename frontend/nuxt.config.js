@@ -38,6 +38,9 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
+
+  buildModules: ['@nuxt/typescript-build'],
+
   /*
   ** Axios module configuration
   */
