@@ -11,11 +11,17 @@
 ### 各コンテナのビルド（初めて起動する時）
 
 ```bash
-docker-compose build
+$ docker-compose build
 ```
 
 ### 各コンテナの起動
 
 ```bash
-docker-compose up
+$ docker-compose up
+```
+
+### MySQL 接続
+
+```bash
+$ docker-compose exec db bash -c 'mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
 ```
