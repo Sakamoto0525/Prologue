@@ -1,9 +1,9 @@
 # Prologue
 
-LaraveとNuxt.jsのスターターセットです。 
+LaraveとNuxt.jsのスターターセットです。
 
-cloneしてすぐに機能実装に入れるように必要な設定をまとめています。 
-技術のアップデートに追従して常にメンテナンスしていきましょう。 
+cloneしてすぐに機能実装に入れるように必要な設定をまとめています。
+技術のアップデートに追従して常にメンテナンスしていきましょう。
 入れておきたい設定・ライブラリがあればプルリクをお願いします。
 なお、なるべくプルリクは３つ以上作成しないようお願いします。
 
@@ -26,11 +26,15 @@ cloneしてすぐに機能実装に入れるように必要な設定をまとめ
 
 ## 起動
 
+### 設定ファイルの作成
+
+```bash
+$ cp .env.default .env
+```
+
 ### 各コンテナのビルド（初めて起動する時）
 
 ```bash
-# 設定ファイルの作成
-$ cp .env.default .env
 $ docker-compose build
 ```
 
@@ -38,6 +42,12 @@ $ docker-compose build
 
 ```bash
 $ docker-compose up
+```
+
+### composer install
+
+```bash
+$ docker-compose exec composer install
 ```
 
 ### DBセットアップ
