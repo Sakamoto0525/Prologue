@@ -11,6 +11,8 @@
 ### 各コンテナのビルド（初めて起動する時）
 
 ```bash
+# 設定ファイルの作成
+$ cp .env.default .env
 $ docker-compose build
 ```
 
