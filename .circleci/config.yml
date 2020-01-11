@@ -51,7 +51,7 @@ jobs:
           name: PHPUnit
           command: cd src && php ./vendor/bin/phpunit
 
-          - run:
+      - run:
           name: php_codesniffer
           command: cd src && php ./vendor/bin/phpcs --standard=phpcs.xml ./
 
