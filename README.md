@@ -50,23 +50,23 @@ $ docker-compose restart app
 ### phpunit
 
 ```bash
-$ docker exec app vendor/bin/phpunit
+$ docker-compose exec app vendor/bin/phpunit
 ```
 
 ### php_cs_fixer
 
 ```bash
-$ docker exec app composer fixer
+$ docker-compose exec app composer fixer
 # `-fix`をつけると自動整形
-$ docker exec app composer fixer-fix
+$ docker-compose exec app composer fixer-fix
 ```
 
 ### php_sniffer
 
 ```bash
-$ docker exec app composer sniffer
+$ docker-compose exec app composer sniffer
 # `-fix`をつけると自動整形
-$ docker exec app composer sniffer-fix
+$ docker-compose exec app composer sniffer-fix
 ```
 
 ### eslint
