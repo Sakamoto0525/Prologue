@@ -30,6 +30,7 @@ cloneしてすぐに機能実装に入れるように必要な設定をまとめ
 
 ```bash
 $ cp .env.default .env
+$ cp src/.env.example .env
 ```
 
 ### 各コンテナのビルド（初めて起動する時）
@@ -74,7 +75,7 @@ $ docker-compose exec app vendor/bin/phpunit
 
 ```bash
 $ docker-compose exec app composer fixer
-# `-fix`をつけると自動整形
+# 自動整形
 $ docker-compose exec app composer fixer-fix
 ```
 
@@ -82,7 +83,7 @@ $ docker-compose exec app composer fixer-fix
 
 ```bash
 $ docker-compose exec app composer sniffer
-# `-fix`をつけると自動整形
+# 自動整形
 $ docker-compose exec app composer sniffer-fix
 ```
 
@@ -91,7 +92,7 @@ $ docker-compose exec app composer sniffer-fix
 ```bash
 # frontendディレクトリ配下で実行
 $ npm run lint
-# `-fix`をつけると自動整形
+# 自動整形
 $ npm run lint --fix
 ```
 
