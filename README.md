@@ -15,9 +15,6 @@ cloneしてすぐに機能実装に入れるように必要な設定をまとめ
 - nginx 1.17.7
 - mysql 8.0.18
 
-
-- Laravel 6.10.1
-
 ### Docker
 
 - app: バックエンドのAPI（php 7.3.3）
