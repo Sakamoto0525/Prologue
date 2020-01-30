@@ -29,7 +29,7 @@ trait CreatesApplication
     }
 
     /**
-     * Run migration once
+     * Run migration once.
      */
     protected function setUpDatabase(): void
     {
